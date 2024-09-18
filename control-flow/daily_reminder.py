@@ -24,8 +24,7 @@ def main():
                 reminder_message += ". Consider completing it when you have free time."
         case _:
             reminder_message = "Invalid priority level entered."
-
-    print(reminder_message)
+    print(f"Reminder: {reminder_message}")
 
 if __name__ == "__main__":
     main()
