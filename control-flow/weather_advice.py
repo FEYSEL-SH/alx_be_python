@@ -1,4 +1,4 @@
-weather_condition = str(input("What's the weather like today? (sunny/rainy/cold): ")
+weather_condition = str(input("What's the weather like today? (sunny/rainy/cold): ").lower()
 )
 
 if weather_condition == "sunny":
