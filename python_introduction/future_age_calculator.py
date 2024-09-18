@@ -1,5 +1,6 @@
 
-current_age = input("How old are you? ")
+current_age = input("How old are you?")
+
 if current_age.isdigit():
     current_age = int(current_age)  
     age = current_age + (2050 - 2024)  
