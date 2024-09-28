@@ -13,5 +13,5 @@ def calculate_future_date():
     days=addDate,
 )
     future_date = current_now + delta
-    print(future_date)
+    print(future_date.strftime("%Y-%m-%d"))
 calculate_future_date()
