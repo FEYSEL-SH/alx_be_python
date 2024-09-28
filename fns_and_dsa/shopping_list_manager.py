@@ -10,11 +10,13 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        try:
-            choice = int(input("Enter your choice: "))  
-        except ValueError:
-            print("Invalid input. Please enter a number between 1 and 4.")
-            continue 
+        choice = int(input("Enter your choice: "))  
+        if type(choice) == int:
+            continue
+        else:
+            print("inter only number")
+            
+        
         if choice == 1:
             addedItem = str(input("insert the item that you want to add"))
             shopping_list.append(addedItem)
