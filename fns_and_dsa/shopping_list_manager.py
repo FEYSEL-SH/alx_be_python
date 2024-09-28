@@ -11,12 +11,11 @@ def main():
     while True:
         display_menu()
         choice = int(input("Enter your choice: "))
-
-        if choice == '1':
+        if choice == 1:
             addedItem = str(input("insert the item that you want to add"))
             shopping_list.append(addedItem)
             pass
-        elif choice == '2':
+        elif choice == 2:
             removed_item = str(input("Insert the item name to be removed: "))
             if removed_item in shopping_list:
                 shopping_list.remove(removed_item)
@@ -24,11 +23,11 @@ def main():
             else:
                 print(f"{removed_item} is not in the shopping list.")
             pass
-        elif choice == '3':
+        elif choice == 3:
 
             print(f"{shopping_list}")
             pass
-        elif choice == '4':
+        elif choice == 4:
             print("Goodbye!")
             break
         else:
