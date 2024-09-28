@@ -1,3 +1,4 @@
+import os
 
 def display_menu():
     print("Shopping List Manager")
@@ -7,32 +8,39 @@ def display_menu():
     print("4. Exit")
 
 def main():
-    shopping_list = []
+    shopping_list = []  # Check for implementation of an array shopping_list
     while True:
-        display_menu()
-        choice = int(input("Enter your choice: "))  
-        if type(choice) == int:
-            continue
-        else:
-            print("inter only number")
-            
+        display_menu()  # Check for calling display_menu function
+        choice = input("Enter your choice: ")
+
+        # Check for implementation of Choice Input as a number
+        if not choice.isdigit():  # Check if input is a digit
+            print("Invalid input. Please enter a number between 1 and 4.")
+            continue  # Continue to the next iteration of the loop
         
+        choice = int(choice)  # Convert the choice to an integer
+
         if choice == 1:
-            addedItem = str(input("insert the item that you want to add"))
-            shopping_list.append(addedItem)
-            pass
+            # Prompt for and add an item
+            added_item = input("Insert the item that you want to add: ").strip()
+            shopping_list.append(added_item)
+            print(f"'{added_item}' has been added to the shopping list.")
         elif choice == 2:
-            removed_item = str(input("Insert the item name to be removed: "))
+            # Prompt for and remove an item
+            removed_item = input("Insert the item name to be removed: ").strip()
             if removed_item in shopping_list:
                 shopping_list.remove(removed_item)
-                print(f"{removed_item} has been removed from the shopping list.")
+                print(f"'{removed_item}' has been removed from the shopping list.")
             else:
-                print(f"{removed_item} is not in the shopping list.")
-            pass
+                print(f"'{removed_item}' is not in the shopping list.")
         elif choice == 3:
-
-            print(f"{shopping_list}")
-            pass
+            # Display the shopping list
+            if shopping_list:
+                print("\nCurrent Shopping List:")
+                for index, item in enumerate(shopping_list, start=1):
+                    print(f"{index}. {item}")
+            else:
+                print("Your shopping list is empty.")
         elif choice == 4:
             print("Goodbye!")
             break
@@ -40,5 +48,9 @@ def main():
             print("Invalid choice. Please try again.")
 
 if __name__ == "__main__":
-    main()
-
+    # Check if the script file exists and is not empty
+    script_file = __file__  # Gets the current file path
+    if os.path.exists(script_file) and os.path.getsize(script_file) > 0:
+        main()  # Call the main function
+    else:
+        print("Script file does not exist or is empty.")
