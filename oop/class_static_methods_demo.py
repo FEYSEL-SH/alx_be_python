@@ -8,9 +8,8 @@ class Calculator:
         print(f"Calculation type: {cls.calculation_type}")
         return a * b
     @staticmethod
-    def add( self, a, b):
-        self.a = a
-        self.b = b
+    def add(a, b):
+
 
         return a * b
 
